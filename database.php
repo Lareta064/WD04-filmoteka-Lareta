@@ -18,5 +18,4 @@ function db_connect(){
 
 }
 
-
  ?>
