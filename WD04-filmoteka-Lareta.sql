@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 04 2018 г., 00:03
+-- Время создания: Окт 04 2018 г., 11:40
 -- Версия сервера: 5.6.38
 -- Версия PHP: 5.5.38
 
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- База данных: `filmoteka`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `password`) VALUES
+(1, 'admin', '12345');
 
 -- --------------------------------------------------------
 
@@ -55,6 +74,12 @@ INSERT INTO `films` (`id`, `title`, `genre`, `year`, `description`, `photo`) VAL
 --
 
 --
+-- Индексы таблицы `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `films`
 --
 ALTER TABLE `films`
@@ -63,6 +88,12 @@ ALTER TABLE `films`
 --
 -- AUTO_INCREMENT для сохранённых таблиц
 --
+
+--
+-- AUTO_INCREMENT для таблицы `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `films`
